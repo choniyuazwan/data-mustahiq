@@ -25,7 +25,7 @@
             </div>
             <div class="box-body">
               <div class="chart">
-                <canvas id="barChart" style="height:400px"></canvas>
+                <canvas id="tanahSareal" style="height:400px"></canvas>
               </div>
             </div>
             <!-- /.box-body -->

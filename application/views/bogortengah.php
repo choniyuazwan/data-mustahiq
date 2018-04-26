@@ -25,14 +25,14 @@
             </div>
             <div class="box-body">
               <div class="chart">
-                <canvas id="barChart" style="height:400px"></canvas>
+                <canvas id="bogorTengah" style="height:400px"></canvas>
               </div>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
 
-        </div>
+        </d12v>
 
       </div>
       <!-- /.row -->
