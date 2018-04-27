@@ -27,11 +27,11 @@
               <div class="form-group">
                 <!-- <div class="col-xs-offset-5 col-sm-offset-0"> -->
                 <div>
-                  <a href="<?=base_url().'upload/form';?>" class="btn btn-success">Tambah Data</a>
+                  <a href="<?=base_url().'user/form';?>" class="btn btn-success">Tambah Data</a>
                 </div>
               </div>
 
-              <form action="<?= base_url(). 'upload/daerah' ?>" method="post" class="form-horizontal">
+              <form action="<?= base_url(). 'user/daerah' ?>" method="post" class="form-horizontal">
                 <div class="form-group">
                   <label for="inputEmail3" class="col-xs-3 col-sm-2 col-md-2 col-lg-1 control-label">Kecamatan</label>
                   <div class="col-xs-9 col-sm-10 col-md-3 col-lg-2">
@@ -162,9 +162,7 @@
 								  <tr>
 								  <td>
 
-                    <a href="<?= base_url(). 'upload/detail/' .$pic->id; ?>" class="btn btn-info btn-xs glyphicon glyphicon-eye-open"></a>
-                    <a href="<?= base_url(). 'upload/update/' .$pic->id; ?>" class="btn btn-warning btn-xs glyphicon glyphicon-pencil"></a>
-                    <a href="<?= base_url(). 'upload/delete/' .$pic->id; ?>" class="btn btn-danger btn-xs glyphicon glyphicon-trash"></a>
+                    <a href="<?= base_url(). 'user/detail/' .$pic->id; ?>" class="btn btn-info btn-xs glyphicon glyphicon-eye-open"></a>
 
                   </td>
                   <td><?=$pic->nik;?></td>
@@ -186,7 +184,7 @@
 
 					      <tfoot>
 					      <tr>
-                  <td>.......................</td>
+                  <td></td>
                   <td></td>
                   <td>............................</td>
 					        <td>............................</td>

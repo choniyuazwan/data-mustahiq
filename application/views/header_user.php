@@ -74,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </li>
 
         <li class=" <?php if($this->uri->segment(2) == "kecamatan") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'upload/kecamatan' ?>">
+          <a href="<?= base_url(). 'user/kecamatan' ?>">
             <i class="fa fa-dashboard"></i> <span>Grafik Kota</span>
             <span class="pull-right-container">
             </span>
@@ -84,7 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <li class="header">GRAFIK KECAMATAN</li>
         
         <li class=" <?php if($this->uri->segment(2) == "bogortengah") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'upload/bogortengah' ?>"">
+          <a href="<?= base_url(). 'user/bogortengah' ?>"">
             <i class="fa fa-pie-chart"></i> <span>Bogor Tengah</span>
             <span class="pull-right-container">
             </span>
@@ -92,7 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </li>
 
         <li class=" <?php if($this->uri->segment(2) == "bogorutara") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'upload/bogorutara' ?>"">
+          <a href="<?= base_url(). 'user/bogorutara' ?>"">
             <i class="fa fa-pie-chart"></i> <span>Bogor Utara</span>
             <span class="pull-right-container">
             </span>
@@ -100,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </li>
 
         <li class=" <?php if($this->uri->segment(2) == "bogortimur") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'upload/bogortimur' ?>"">
+          <a href="<?= base_url(). 'user/bogortimur' ?>"">
             <i class="fa fa-pie-chart"></i> <span>Bogor Timur</span>
             <span class="pull-right-container">
             </span>
@@ -108,7 +108,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </li>
 
         <li class=" <?php if($this->uri->segment(2) == "bogorselatan") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'upload/bogorselatan' ?>"">
+          <a href="<?= base_url(). 'user/bogorselatan' ?>"">
             <i class="fa fa-pie-chart"></i> <span>Bogor Selatan</span>
             <span class="pull-right-container">
             </span>
@@ -116,7 +116,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </li>
 
         <li class=" <?php if($this->uri->segment(2) == "bogorbarat") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'upload/bogorbarat' ?>"">
+          <a href="<?= base_url(). 'user/bogorbarat' ?>"">
             <i class="fa fa-pie-chart"></i> <span>Bogor Barat</span>
             <span class="pull-right-container">
             </span>
@@ -124,7 +124,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </li>
 
         <li class=" <?php if($this->uri->segment(2) == "tanahsareal") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'upload/tanahsareal' ?>"">
+          <a href="<?= base_url(). 'user/tanahsareal' ?>"">
             <i class="fa fa-pie-chart"></i> <span>Tanah Sareal</span>
             <span class="pull-right-container">
             </span>
