@@ -3,14 +3,9 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Tables
-        <small>advanced tables</small>
+        Olah Data
+        <small>Rangkuman</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
-      </ol>
     </section>
 
     <!-- Main content -->
@@ -19,10 +14,6 @@
         <div class="col-xs-12">
          
           <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Data Table With Full Features</h3>
-            </div>
-            <!-- /.box-header -->
             <div class="box-body">
               <div class="form-group">
                 <!-- <div class="col-xs-offset-5 col-sm-offset-0"> -->
@@ -137,8 +128,6 @@
                 </div>
               </form>
 
-              <br>
-
 						  <table id="example2" class="table table-bordered">
 								<thead>
 								  <tr>
@@ -162,9 +151,9 @@
 								  <tr>
 								  <td>
 
-                    <a href="<?= base_url(). 'upload/detail/' .$pic->id; ?>" class="btn btn-info btn-xs glyphicon glyphicon-eye-open"></a>
-                    <a href="<?= base_url(). 'upload/update/' .$pic->id; ?>" class="btn btn-warning btn-xs glyphicon glyphicon-pencil"></a>
                     <a href="<?= base_url(). 'upload/delete/' .$pic->id; ?>" class="btn btn-danger btn-xs glyphicon glyphicon-trash"></a>
+                    <a href="<?= base_url(). 'upload/update/' .$pic->id; ?>" class="btn btn-warning btn-xs glyphicon glyphicon-pencil"></a>
+                    <a href="<?= base_url(). 'upload/detail/' .$pic->id; ?>" class="btn btn-info btn-xs glyphicon glyphicon-eye-open"></a>
 
                   </td>
                   <td><?=$pic->nik;?></td>
@@ -201,11 +190,6 @@
 					      </tr>
 					      </tfoot>
 						  </table>
-
-							<br /><br />
-							<p class="footer" style="bottom:0">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
-
-
             </div>
             <!-- /.box-body -->
 
@@ -220,13 +204,3 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
-  </footer>
-

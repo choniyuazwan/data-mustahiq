@@ -3,14 +3,9 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        General Form Elements
-        <small>Preview</small>
+        Olah Data
+        <small>Edit Data</small>
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Forms</a></li>
-        <li class="active">General Elements</li>
-      </ol>
     </section>
 
     <!-- Main content -->
@@ -20,13 +15,7 @@
         <!-- right column -->
         <div class="col-md-12">
           <!-- Horizontal Form -->
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Edit Data</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-
+          <div class="box">
             <div class="form-group" style="color:red">
               <label for="inputEmail3" class="col-sm-12 control-label"><?php echo validation_errors(); ?><?php if(isset($error)){print $error;}?></label>
             </div>
@@ -275,10 +264,3 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
-  </footer>

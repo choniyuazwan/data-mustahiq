@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Logout extends CI_Controller {
 	public function index() {
-		$cek = $this->session->userdata('username');
+		$cek = $this->session->userdata('stts');
 		if (empty($cek)) {
 			header("location:".base_url());
 		} else {

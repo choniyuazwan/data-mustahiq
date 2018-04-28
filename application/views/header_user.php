@@ -53,6 +53,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown user user-menu">
+            <a href="<?php echo base_url(). "logout" ?>">
+              <img src="<?php echo base_url(). "assets"?> /dist/img/user.png" class="user-image" alt="User Image">
+              <span class="hidden-xs"><b>Tamu</b> (Keluar)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
@@ -65,9 +76,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class=" <?php if($this->uri->segment(2) == "form" || $this->uri->segment(2) == "detail" || $this->uri->segment(2) == "update" || $this->uri->segment(2) == "file_data" || $this->uri->segment(2) == "daerah" || $this->uri->segment(1) == "") {echo "active";} ?> " >
+        <li class=" <?php if($this->uri->segment(2) == "form" || $this->uri->segment(2) == "detail" || $this->uri->segment(2) == "update" || $this->uri->segment(2) == "file_data" || $this->uri->segment(2) == "daerah" || $this->uri->segment(1) == "" || $this->uri->segment(2) == "") {echo "active";} ?> " >
           <a href="<?= base_url() ?>">
-            <i class="fa fa-edit"></i> <span>Olah Data</span>
+            <i class="fa fa-edit"></i> <span>Lihat Data</span>
             <span class="pull-right-container">
             </span>
           </a>
@@ -75,17 +86,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <li class=" <?php if($this->uri->segment(2) == "kecamatan") {echo "active";} ?> " >
           <a href="<?= base_url(). 'user/kecamatan' ?>">
-            <i class="fa fa-dashboard"></i> <span>Grafik Kota</span>
+            <i class="fa fa-dashboard"></i> <span>Kota Bogor</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
 
-        <li class="header">GRAFIK KECAMATAN</li>
+        <li class="header">KECAMATAN</li>
         
         <li class=" <?php if($this->uri->segment(2) == "bogortengah") {echo "active";} ?> " >
           <a href="<?= base_url(). 'user/bogortengah' ?>"">
-            <i class="fa fa-pie-chart"></i> <span>Bogor Tengah</span>
+            <i class="fa fa-bar-chart"></i> <span>Bogor Tengah</span>
             <span class="pull-right-container">
             </span>
           </a>
@@ -93,7 +104,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <li class=" <?php if($this->uri->segment(2) == "bogorutara") {echo "active";} ?> " >
           <a href="<?= base_url(). 'user/bogorutara' ?>"">
-            <i class="fa fa-pie-chart"></i> <span>Bogor Utara</span>
+            <i class="fa fa-bar-chart"></i> <span>Bogor Utara</span>
             <span class="pull-right-container">
             </span>
           </a>
@@ -101,7 +112,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <li class=" <?php if($this->uri->segment(2) == "bogortimur") {echo "active";} ?> " >
           <a href="<?= base_url(). 'user/bogortimur' ?>"">
-            <i class="fa fa-pie-chart"></i> <span>Bogor Timur</span>
+            <i class="fa fa-bar-chart"></i> <span>Bogor Timur</span>
             <span class="pull-right-container">
             </span>
           </a>
@@ -109,7 +120,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <li class=" <?php if($this->uri->segment(2) == "bogorselatan") {echo "active";} ?> " >
           <a href="<?= base_url(). 'user/bogorselatan' ?>"">
-            <i class="fa fa-pie-chart"></i> <span>Bogor Selatan</span>
+            <i class="fa fa-bar-chart"></i> <span>Bogor Selatan</span>
             <span class="pull-right-container">
             </span>
           </a>
@@ -117,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <li class=" <?php if($this->uri->segment(2) == "bogorbarat") {echo "active";} ?> " >
           <a href="<?= base_url(). 'user/bogorbarat' ?>"">
-            <i class="fa fa-pie-chart"></i> <span>Bogor Barat</span>
+            <i class="fa fa-bar-chart"></i> <span>Bogor Barat</span>
             <span class="pull-right-container">
             </span>
           </a>
@@ -125,7 +136,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <li class=" <?php if($this->uri->segment(2) == "tanahsareal") {echo "active";} ?> " >
           <a href="<?= base_url(). 'user/tanahsareal' ?>"">
-            <i class="fa fa-pie-chart"></i> <span>Tanah Sareal</span>
+            <i class="fa fa-bar-chart"></i> <span>Tanah Sareal</span>
             <span class="pull-right-container">
             </span>
           </a>

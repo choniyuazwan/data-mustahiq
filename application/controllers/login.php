@@ -13,7 +13,7 @@ class Login extends CI_Controller {
 		} else {
 			$st = $this->session->userdata('stts');
 			if ($st == 'admin') {
-				header('location:'.base_url().'admin');
+				header('location:'.base_url().'welcome');
 			} else {
 				header('location:'.base_url().'user');
 			}

@@ -3,8 +3,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Olah Data
-        <small>Detail</small>
+        General Form Elements
+        <small>Preview</small>
       </h1>
     </section>
 
@@ -15,7 +15,13 @@
         <!-- right column -->
         <div class="col-md-12">
           <!-- Horizontal Form -->
-          <div class="box">
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Detail Data</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+
             <?php foreach ($picture_list as $pic): ?>
               <form action="" method="" class="form-horizontal">
 
@@ -110,10 +116,8 @@
                 <!-- /.box-body -->
                 <div class="box-footer">
                   <br>
-                  <div class="col-lg-offset-5 col-md-offset-4 col-sm-offset-3 col-xs-offset-0">
-                    <a href="<?=base_url();?>" class="btn btn-success">Kembali</a>
-                    <a href="<?= base_url(). 'upload/update/' .$pic->id; ?>"" class="btn btn-warning">Edit</a>
-                    <a href="<?= base_url(). 'upload/delete/' .$pic->id; ?>" class="btn btn-danger">Hapus</a>
+                  <div class="col-lg-offset-6 col-md-offset-6 col-sm-offset-5 col-xs-offset-4">
+                    <a href="<?=base_url().'user';?>" class="btn btn-success">Kembali</a>
                   </div>
                 </div>
                 <!-- /.box-footer -->
@@ -133,3 +137,10 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>

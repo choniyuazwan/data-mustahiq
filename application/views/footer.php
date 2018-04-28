@@ -1,4 +1,12 @@
 
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Developed by <a href="https://www.linkedin.com/in/choniyuazwan/" target="_blank">Choniyu Azwan</a></b>
+    </div>
+    <strong>Copyright &copy; 2018 <a href="http://nurulfikri.ac.id" target="_blank">STT Nurul Fikri</a>.</strong> All rights
+    reserved.
+  </footer>
+
 </div>
 
 <!-- <script src=" <?php echo base_url(). "assets" ?> /jquery-chained/ajax.googleapis.com.jquery.min.js" type="text/javascript" charset="utf-8"></script> -->
