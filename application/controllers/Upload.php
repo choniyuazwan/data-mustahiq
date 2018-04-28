@@ -52,7 +52,6 @@ class Upload extends CI_Controller{
 					$data['jenisprogram'] = $this->input->post('jenisprogram[]');
 				}
 				
-
 				$config['upload_path']          = APPPATH. '../assets/uploads/wajah/';
 				$config['allowed_types']        = 'gif|jpg|png';
 				$config['max_size']             = 10000;
