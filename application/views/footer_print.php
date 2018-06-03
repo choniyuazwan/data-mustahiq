@@ -1,15 +1,6 @@
 
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Developed by <a href="https://www.linkedin.com/in/choniyuazwan/" target="_blank">Choniyu Azwan</a></b>
-    </div>
-    <strong>Copyright &copy; 2018 <a href="http://nurulfikri.ac.id" target="_blank">STT Nurul Fikri</a>.</strong> All rights
-    reserved.
-  </footer>
-
 </div>
-
-<!-- <script src=" <?php echo base_url(). "assets" ?> /jquery-chained/ajax.googleapis.com.jquery.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- ./wrapper -->
 
 <!-- jQuery 3 -->
 <script src=" <?php echo base_url(). "assets" ?> /bower_components/jquery/dist/jquery.min.js"></script>
@@ -37,60 +28,6 @@
 <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
 <script src=" <?php echo base_url(). "assets" ?> /bower_components/Flot/jquery.flot.categories.js"></script>
 
-
-<!-- DataTables -->
-<script src=" <?php echo base_url(). "assets" ?> /bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src=" <?php echo base_url(). "assets" ?> /bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-
-
-<!-- Page script -->
-<script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      "scrollX"     : true,
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : true,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : true
-    })
-  })
-</script>
-
-<script src=" <?php echo base_url(). "assets" ?> /jquery-chained/jquery.chained.js?v=1.0.0" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-  $(function() {
-    /* For jquery.chained.js */
-    $("#filter_kelurahan").chained("#filter_kecamatan");
-  });
-</script>
-
-<script type="text/javascript" charset="utf-8">
-  $(function() {
-    $("#kelurahan").chained("#kecamatan");
-  });
-</script>
-
-<!-- <script>
-  $(function() {
-    $('[data-toggle="datepicker"]').datepicker({
-      // autoHide: true,
-      // zIndex: 2048,
-    });
-  });
-</script> -->
-
-<!-- Page script -->
-<script>
-  $(function () {
-    //Date picker
-    $('#datepicker').datepicker({
-      autoclose: true
-    })
-  })
-</script>
 
 <script>
   $(function () {
@@ -512,7 +449,6 @@
   })
 </script>
 
-
 <!--
 ----------- 
 DONUT CHART
@@ -823,7 +759,6 @@ DONUT CHART
       + Math.round(series.percent) + '%</div>'
   }
 </script>
-
 
 </body>
 </html>

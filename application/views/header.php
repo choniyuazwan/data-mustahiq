@@ -31,9 +31,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- Google Font -->
   <link rel="stylesheet"
         href=" <?php echo base_url(). "assets" ?> /fonts/fonts.googleapis.comcssfamily=Source+Sans+Pro300,400,600,700,300italic,400italic,600italic.css">
+
+  <link rel="stylesheet" href=" <?php echo base_url(). "assets" ?> /css/custom.css">
   
 </head>
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <header class="main-header">

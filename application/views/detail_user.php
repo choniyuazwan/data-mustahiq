@@ -116,8 +116,9 @@
                 <!-- /.box-body -->
                 <div class="box-footer">
                   <br>
-                  <div class="col-lg-offset-6 col-md-offset-6 col-sm-offset-5 col-xs-offset-4">
+                  <div class="col-lg-offset-5 col-md-offset-4 col-sm-offset-3 col-xs-offset-0x">
                     <a href="<?=base_url().'user';?>" class="btn btn-success">Kembali</a>
+                    <a href="<?= base_url(). 'user/update/' .$pic->id; ?>"" class="btn btn-warning">Edit</a>
                   </div>
                 </div>
                 <!-- /.box-footer -->
@@ -136,11 +137,4 @@
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
-  </footer>
+

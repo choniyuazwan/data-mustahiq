@@ -145,6 +145,7 @@
 								  <tr>
 								  <td>
 
+                    <a href="<?= base_url(). 'user/update/' .$pic->id; ?>" class="btn btn-warning btn-xs glyphicon glyphicon-pencil"></a>
                     <a href="<?= base_url(). 'user/detail/' .$pic->id; ?>" class="btn btn-info btn-xs glyphicon glyphicon-eye-open"></a>
 
                   </td>
@@ -167,7 +168,7 @@
 
 					      <tfoot>
 					      <tr>
-                  <td></td>
+                  <td>...............</td>
                   <td></td>
                   <td>............................</td>
 					        <td>............................</td>
