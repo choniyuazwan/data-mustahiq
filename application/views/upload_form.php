@@ -225,6 +225,13 @@
                   </div>
                 </div>
 
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">Keterangan</label>
+                  <div class="col-sm-9">
+                    <textarea name="keterangan" class="form-control" rows="3"><?= set_value('keterangan'); ?></textarea>
+                  </div>
+                </div>
+
               </div>
               <!-- /.box-body -->
               <div class="box-footer">

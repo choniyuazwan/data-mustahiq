@@ -19,6 +19,7 @@ class Pic_model extends CI_Model{
 		$insert_data['kelurahan'] = $data['kelurahan'];
 		$insert_data['alamat'] = $data['alamat'];
 		$insert_data['jenisprogram'] = $data['jenisprogram'];
+		$insert_data['keterangan'] = $data['keterangan'];
 
 		if (!empty($data['fotowajah'])) {
 			$insert_data['fotowajah'] = $data['fotowajah'];
@@ -40,6 +41,7 @@ class Pic_model extends CI_Model{
 		$this->db->set('kelurahan', $data['kelurahan']);
 		$this->db->set('alamat', $data['alamat']);
 		$this->db->set('jenisprogram', $data['jenisprogram']);
+		$this->db->set('keterangan', $data['keterangan']);
 
 		if (!empty($data['fotowajah'])) {
 			$this->db->set('fotowajah', $data['fotowajah']);

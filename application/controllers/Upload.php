@@ -45,6 +45,7 @@ class Upload extends CI_Controller{
 				$data['kecamatan'] = $this->input->post('kecamatan');
 				$data['kelurahan'] = $this->input->post('kelurahan');
 				$data['alamat'] = $this->input->post('alamat');
+				$data['keterangan'] = $this->input->post('keterangan');
 				if (!empty($this->input->post('jenisprogram'))) {
 					$array = $this->input->post('jenisprogram[]');
 		    	$data['jenisprogram'] = implode(', ',$array);
@@ -180,6 +181,7 @@ class Upload extends CI_Controller{
 			$data['kecamatan'] = $this->input->post('kecamatan');
 			$data['kelurahan'] = $this->input->post('kelurahan');
 			$data['alamat'] = $this->input->post('alamat');
+			$data['keterangan'] = $this->input->post('keterangan');
 			$array = $this->input->post('jenisprogram[]');
 	  	$data['jenisprogram'] = implode(', ',$array);
 

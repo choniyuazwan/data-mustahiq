@@ -142,7 +142,8 @@
 						      <th>Kelurahan</th>
 						      <th>Alamat</th>
 						      <th>Foto Wajah</th>
-						      <th>Foto Rumah</th>
+                  <th>Foto Rumah</th>
+						      <th>Keterangan</th>
 						      <!-- <th>Foto Rumah</th> -->
 								  </tr>
 								</thead>
@@ -164,11 +165,13 @@
 									<td><?=$pic->tanggallahir;?></td>
 									<td><?=$pic->kecamatan;?></td>
 									<td><?=$pic->kelurahan;?></td>
-									<td><?=$pic->alamat;?></td>
-									
-									<td><a href="<?=base_url().'assets/uploads/wajah/'.$pic->fotowajah;?>" target="_blank"><img src="<?=base_url().'assets/uploads/wajah/'.$pic->fotowajah;?>" width="100"></a></td>
+                  <td><?=$pic->alamat;?></td>
+                  
+                  <td><a href="<?=base_url().'assets/uploads/wajah/'.$pic->fotowajah;?>" target="_blank"><img src="<?=base_url().'assets/uploads/wajah/'.$pic->fotowajah;?>" width="100"></a></td>
 
-									<td><a href="<?=base_url().'assets/uploads/rumah/'.$pic->fotorumah;?>" target="_blank"><img src="<?=base_url().'assets/uploads/rumah/'.$pic->fotorumah;?>" width="100"></a></td>
+                  <td><a href="<?=base_url().'assets/uploads/rumah/'.$pic->fotorumah;?>" target="_blank"><img src="<?=base_url().'assets/uploads/rumah/'.$pic->fotorumah;?>" width="100"></a></td>
+									
+                  <td><?=$pic->keterangan;?></td>
 								  </tr>
 								<?php endforeach ?>
 								</tbody>

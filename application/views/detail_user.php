@@ -112,6 +112,14 @@
                     </div>
                   </div>
 
+                  <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 col-sm-offset-1">Keterangan</label>
+
+                    <div class="col-sm-9">
+                      <?= $pic->keterangan ?>
+                    </div>
+                  </div>
+
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
