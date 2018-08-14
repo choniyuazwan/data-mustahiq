@@ -11,12 +11,88 @@ class User extends CI_Controller {
 		$this->load->helper('url');
 	}
 
+	public function form(){
+		$cek = $this->session->userdata('stts');
+		if ($cek == 'user') {
+			$this->load->view('header_user');
+			$this->load->view('upload_form_user');
+			$this->load->view('footer');
+		} else {
+			header("location:" .base_url());
+		}
+	}
+
+	public function file_data(){
+		$cek = $this->session->userdata('stts');
+		if ($cek == 'user') {
+
+			$this->form_validation->set_rules('nik', 'NIK', 'required|is_natural|is_unique[identitas.nik]|exact_length[16]');
+			$this->form_validation->set_message('required', '{field} tidak boleh kosong');
+			$this->form_validation->set_message('is_natural', '{field} hanya boleh berupa angka');
+			$this->form_validation->set_message('is_unique', '{field} sudah tersimpan di dalam database, harap masukkan {field} lainnya');
+			$this->form_validation->set_message('exact_length', '{field} harus memiliki panjang {param} digit');
+
+	    if ($this->form_validation->run() == FALSE){
+				$this->load->view('header_user');
+				$this->load->view('upload_form_user');
+				$this->load->view('footer');
+			} else {
+				$data['nik'] = $this->input->post('nik');
+				$data['nama'] = $this->input->post('nama');
+				$data['jeniskelamin'] = $this->input->post('jeniskelamin');
+				$data['tempatlahir'] = $this->input->post('tempatlahir');
+				$data['tanggallahir'] = $this->input->post('tanggallahir');
+				$data['kecamatan'] = $this->input->post('kecamatan');
+				$data['kelurahan'] = $this->input->post('kelurahan');
+				$data['alamat'] = $this->input->post('alamat');
+				$data['keterangan'] = $this->input->post('keterangan');
+				if (!empty($this->input->post('jenisprogram'))) {
+					$array = $this->input->post('jenisprogram[]');
+		    	$data['jenisprogram'] = implode(', ',$array);
+				} else {
+					$data['jenisprogram'] = $this->input->post('jenisprogram[]');
+				}
+				
+				$config['upload_path']          = APPPATH. '../assets/uploads/wajah/';
+				$config['allowed_types']        = 'gif|jpg|png';
+				$config['max_size']             = 10000;
+				$config['file_ext_tolower']			= true;
+
+				$this->load->library('upload', $config);
+					
+				if ($this->upload->do_upload('fotowajah')) {
+					$upload_data = $this->upload->data();
+					$data['fotowajah'] = $upload_data['file_name'];
+				}
+
+				$config2['upload_path']          = APPPATH. '../assets/uploads/rumah/';
+				$config2['allowed_types']        = 'gif|jpg|png';
+				$config2['max_size']             = 10000;
+				$config2['file_ext_tolower']			= true;
+
+				$this->upload->initialize($config2);
+				$this->load->library('upload', $config2);
+				if ($this->upload->do_upload('fotorumah')) {
+					$upload_data_rumah = $this->upload->data();
+					$data['fotorumah'] = $upload_data_rumah['file_name'];
+				}
+
+				$this->pic_model->store_pic_data($data);
+
+				redirect('/');
+			}
+		} else {
+			header("location:" .base_url());
+		}
+	}
+
 	public function index()	{
 		$cek = $this->session->userdata('stts');
 		if ($cek == 'user') {
 			$this->load->model('pic_model');
-
 			$data['picture_list'] = $this->pic_model->get_all_pics();
+			
+			// $data['picture_list'] = $this->db->get('identitas')->result();
 			$data['filter_kecamatan'] = "";
 			$data['filter_kelurahan'] = "";
 
@@ -56,7 +132,7 @@ class User extends CI_Controller {
 			$data['filter_kelurahan'] = "";
 
 			$this->load->view('header_user');
-			$this->load->view('picture_list', $data);
+			$this->load->view('picture_list_user', $data);
 			$this->load->view('footer');
 			
 			} else if (empty($filter_kelurahan)) {
@@ -68,7 +144,7 @@ class User extends CI_Controller {
 				$data['filter_kelurahan'] = $filter_kelurahan;
 
 				$this->load->view('header_user');
-				$this->load->view('picture_list', $data);
+				$this->load->view('picture_list_user', $data);
 				$this->load->view('footer');
 			
 			} else {		
@@ -80,7 +156,7 @@ class User extends CI_Controller {
 				$data['filter_kelurahan'] = $filter_kelurahan;
 
 				$this->load->view('header_user');
-				$this->load->view('picture_list', $data);
+				$this->load->view('picture_list_user', $data);
 				$this->load->view('footer');
 			}
 		} else {
@@ -147,55 +223,6 @@ class User extends CI_Controller {
 		}
 	}
 
-
-	public function kecamatan_print() {
-			$this->db->where('kecamatan', 'Bogor-Tengah');
-			$data['bogor_tengah'] = $this->db->get('identitas')->num_rows();
-
-			$this->db->where('kecamatan', 'Bogor-Utara');
-			$data['bogor_utara'] = $this->db->get('identitas')->num_rows();
-
-			$this->db->where('kecamatan', 'Bogor-Timur');
-			$data['bogor_timur'] = $this->db->get('identitas')->num_rows();
-
-			$this->db->where('kecamatan', 'Bogor-Selatan');
-			$data['bogor_selatan'] = $this->db->get('identitas')->num_rows();
-
-			$this->db->where('kecamatan', 'Bogor-Barat');
-			$data['bogor_barat'] = $this->db->get('identitas')->num_rows();
-
-			$this->db->where('kecamatan', 'Bogor-Sareal');
-			$data['bogor_sareal'] = $this->db->get('identitas')->num_rows();
-
-			$data['total_kecamatan'] = $data['bogor_tengah'] + $data['bogor_utara'] + $data['bogor_timur'] + $data['bogor_selatan'] + $data['bogor_barat'] + $data['bogor_sareal'];
-
-			if ($data['total_kecamatan'] == 0) {
-				$data['total_bogor_utara'] = 0.0000001;
-			}		
-			
-			$data['persen_bogor_tengah'] = ($data['bogor_tengah'] * 100) / $data['total_kecamatan'];
-			$data['persen_bogor_tengah'] = round($data['persen_bogor_tengah'], 0);
-
-			$data['persen_bogor_utara'] = ($data['bogor_utara'] * 100) / $data['total_kecamatan'];
-			$data['persen_bogor_utara'] = round($data['persen_bogor_utara'], 0);
-
-			$data['persen_bogor_timur'] = ($data['bogor_timur'] * 100) / $data['total_kecamatan'];
-			$data['persen_bogor_timur'] = round($data['persen_bogor_timur'], 0);
-
-			$data['persen_bogor_selatan'] = ($data['bogor_selatan'] * 100) / $data['total_kecamatan'];
-			$data['persen_bogor_selatan'] = round($data['persen_bogor_selatan'], 0);
-
-			$data['persen_bogor_barat'] = ($data['bogor_barat'] * 100) / $data['total_kecamatan'];
-			$data['persen_bogor_barat'] = round($data['persen_bogor_barat'], 0);
-
-			$data['persen_bogor_sareal'] = ($data['bogor_sareal'] * 100) / $data['total_kecamatan'];
-			$data['persen_bogor_sareal'] = round($data['persen_bogor_sareal'], 0);
-
-			$this->load->view('header_print');
-			$this->load->view('kecamatan_print', $data);
-			$this->load->view('footer_print');
-	}
-
 	public function kecamatan()	{
 		$cek = $this->session->userdata('stts');
 		if ($cek == 'user') {
@@ -248,6 +275,55 @@ class User extends CI_Controller {
 			header("location:" .base_url());
 		}
 	}
+
+	public function kecamatan_print() {
+			$this->db->where('kecamatan', 'Bogor-Tengah');
+			$data['bogor_tengah'] = $this->db->get('identitas')->num_rows();
+
+			$this->db->where('kecamatan', 'Bogor-Utara');
+			$data['bogor_utara'] = $this->db->get('identitas')->num_rows();
+
+			$this->db->where('kecamatan', 'Bogor-Timur');
+			$data['bogor_timur'] = $this->db->get('identitas')->num_rows();
+
+			$this->db->where('kecamatan', 'Bogor-Selatan');
+			$data['bogor_selatan'] = $this->db->get('identitas')->num_rows();
+
+			$this->db->where('kecamatan', 'Bogor-Barat');
+			$data['bogor_barat'] = $this->db->get('identitas')->num_rows();
+
+			$this->db->where('kecamatan', 'Bogor-Sareal');
+			$data['bogor_sareal'] = $this->db->get('identitas')->num_rows();
+
+			$data['total_kecamatan'] = $data['bogor_tengah'] + $data['bogor_utara'] + $data['bogor_timur'] + $data['bogor_selatan'] + $data['bogor_barat'] + $data['bogor_sareal'];
+
+			if ($data['total_kecamatan'] == 0) {
+				$data['total_bogor_utara'] = 0.0000001;
+			}		
+			
+			$data['persen_bogor_tengah'] = ($data['bogor_tengah'] * 100) / $data['total_kecamatan'];
+			$data['persen_bogor_tengah'] = round($data['persen_bogor_tengah'], 0);
+
+			$data['persen_bogor_utara'] = ($data['bogor_utara'] * 100) / $data['total_kecamatan'];
+			$data['persen_bogor_utara'] = round($data['persen_bogor_utara'], 0);
+
+			$data['persen_bogor_timur'] = ($data['bogor_timur'] * 100) / $data['total_kecamatan'];
+			$data['persen_bogor_timur'] = round($data['persen_bogor_timur'], 0);
+
+			$data['persen_bogor_selatan'] = ($data['bogor_selatan'] * 100) / $data['total_kecamatan'];
+			$data['persen_bogor_selatan'] = round($data['persen_bogor_selatan'], 0);
+
+			$data['persen_bogor_barat'] = ($data['bogor_barat'] * 100) / $data['total_kecamatan'];
+			$data['persen_bogor_barat'] = round($data['persen_bogor_barat'], 0);
+
+			$data['persen_bogor_sareal'] = ($data['bogor_sareal'] * 100) / $data['total_kecamatan'];
+			$data['persen_bogor_sareal'] = round($data['persen_bogor_sareal'], 0);
+
+			$this->load->view('header_print');
+			$this->load->view('kecamatan_print', $data);
+			$this->load->view('footer_print');
+	}
+
 
 	public function bogortengah()	{
 		$cek = $this->session->userdata('stts');
@@ -334,7 +410,7 @@ class User extends CI_Controller {
 
 	public function bogortengah_print()	{
 		$cek = $this->session->userdata('stts');
-		if ($cek == 'user') {
+		if ($cek == 'admin') {
 			$this->db->where('kelurahan', 'Babakan');
 			$data['babakan'] = $this->db->get('identitas')->num_rows();
 

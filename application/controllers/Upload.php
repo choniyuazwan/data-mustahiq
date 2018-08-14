@@ -149,8 +149,15 @@ class Upload extends CI_Controller{
 	public function delete( $id = NULL ) {
 		$cek = $this->session->userdata('stts');
 		if ($cek == 'admin') {
+			$this->db->select('fotowajah');
+			$this->db->where('id', $id);
+			$fotowajah = $this->db->get('identitas');
+			$path = '../assets/uploads/wajah/' .$fotowajah;
+			delete_files($path);
+
 			$this->db->where('id', $id);
 			$this->db->delete('identitas');
+
 			redirect('/');
 		} else {
 			header("location:" .base_url());
@@ -1339,6 +1346,12 @@ class Upload extends CI_Controller{
 		} else {
 			header("location:" .base_url());
 		}
+	}
+
+	public function tabel_print() {
+			$this->load->view('header_print');
+			$this->load->view('tabel_print');
+			$this->load->view('footer_print');
 	}
 
 }

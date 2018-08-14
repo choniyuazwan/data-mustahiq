@@ -10,7 +10,8 @@ class Db_model extends CI_Model {
         // $u = md5($mysqli->real_escape_string($pwd));
 
         $u = $usr;
-        $p = md5($pwd);
+        // $p = md5($pwd);
+        $p = $pwd;
 
         $cek_login = $this->db->get_where('user', array('username' => $u, 'password' => $p));
         if($cek_login->num_rows() > 0) {

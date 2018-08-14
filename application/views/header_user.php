@@ -31,6 +31,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- Google Font -->
   <link rel="stylesheet"
         href=" <?php echo base_url(). "assets" ?> /fonts/fonts.googleapis.comcssfamily=Source+Sans+Pro300,400,600,700,300italic,400italic,600italic.css">
+
+  <link rel="stylesheet" href=" <?php echo base_url(). "assets" ?> /css/custom.css">
   
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -59,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li class="dropdown user user-menu">
             <a href="<?php echo base_url(). "logout" ?>">
               <img src="<?php echo base_url(). "assets"?> /dist/img/user.png" class="user-image" alt="User Image">
-              <span class="hidden-xs"><b>Tamu</b> (Keluar)</span>
+              <span class="hidden-xs"><b>Petugas</b> (Keluar)</span>
             </a>
           </li>
         </ul>
@@ -76,70 +78,50 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class=" <?php if($this->uri->segment(2) == "form" || $this->uri->segment(2) == "detail" || $this->uri->segment(2) == "update" || $this->uri->segment(2) == "file_data" || $this->uri->segment(2) == "daerah" || $this->uri->segment(1) == "" || $this->uri->segment(2) == "") {echo "active";} ?> " >
+        <li class=" <?php if($this->uri->segment(2) == "form" || $this->uri->segment(2) == "detail" || $this->uri->segment(2) == "update" || $this->uri->segment(2) == "file_data" || $this->uri->segment(2) == "daerah" || $this->uri->segment(1) == "welcome" || $this->uri->segment(1) == "" || $this->uri->segment(1) == "user") {echo "active";} ?> " >
           <a href="<?= base_url() ?>">
-            <i class="fa fa-edit"></i> <span>Lihat Data</span>
+            <i class="fa fa-edit"></i> <span>Olah Data</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
 
-        <li class=" <?php if($this->uri->segment(2) == "kecamatan") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'user/kecamatan' ?>">
-            <i class="fa fa-dashboard"></i> <span>Kota Bogor</span>
+        <li class="treeview <?php if(($this->uri->segment(1) == "user" && $this->uri->segment(2) == "kecamatan") || ($this->uri->segment(1) == "user" && $this->uri->segment(2) == "bogortengah") || ($this->uri->segment(1) == "user" && $this->uri->segment(2) == "bogorutara") || ($this->uri->segment(1) == "user" && $this->uri->segment(2) == "bogortimur") || ($this->uri->segment(1) == "user" && $this->uri->segment(2) == "bogorselatan") || ($this->uri->segment(1) == "user" && $this->uri->segment(2) == "bogorbarat") || ($this->uri->segment(1) == "user" && $this->uri->segment(2) == "tanahsareal")) {echo " active";} ?>">
+          <a href="#">
+            <i class="fa fa-bar-chart"></i>
+            <span>Grafik Mustahiq</span>
             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li class="<?php if($this->uri->segment(1) == "user" && $this->uri->segment(2) == "kecamatan") {echo " active";} ?>" ><a href="<?= base_url(). 'user/kecamatan' ?>"><i class="fa fa-circle-o"></i> Kota Bogor</a></li>
+            <li class="<?php if($this->uri->segment(1) == "user" && $this->uri->segment(2) == "bogortengah") {echo " active";} ?>" ><a href="<?= base_url(). 'user/bogortengah' ?>"><i class="fa fa-circle-o"></i> Kecamatan Bogor Tengah</a></li>
+            <li class="<?php if($this->uri->segment(1) == "user" && $this->uri->segment(2) == "bogorutara") {echo " active";} ?>" ><a href="<?= base_url(). 'user/bogorutara' ?>"><i class="fa fa-circle-o"></i> Kecamatan Bogor Utara</a></li>
+            <li class="<?php if($this->uri->segment(1) == "user" && $this->uri->segment(2) == "bogortimur") {echo " active";} ?>" ><a href="<?= base_url(). 'user/bogortimur' ?>"><i class="fa fa-circle-o"></i> Kecamatan Bogor Timur</a></li>
+            <li class="<?php if($this->uri->segment(1) == "user" && $this->uri->segment(2) == "bogorselatan") {echo " active";} ?>" ><a href="<?= base_url(). 'user/bogorselatan' ?>"><i class="fa fa-circle-o"></i> Kecamatan Bogor Selatan</a></li>
+            <li class="<?php if($this->uri->segment(1) == "user" && $this->uri->segment(2) == "bogorbarat") {echo " active";} ?>" ><a href="<?= base_url(). 'user/bogorbarat' ?>"><i class="fa fa-circle-o"></i> Kecamatan Bogor Barat</a></li>
+            <li class="<?php if($this->uri->segment(1) == "user" && $this->uri->segment(2) == "tanahsareal") {echo " active";} ?>" ><a href="<?= base_url(). 'user/tanahsareal' ?>"><i class="fa fa-circle-o"></i> Kecamatan Tanah Sareal</a></li>
+          </ul>
         </li>
 
-        <li class="header">KECAMATAN</li>
-        
-        <li class=" <?php if($this->uri->segment(2) == "bogortengah") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'user/bogortengah' ?>"">
-            <i class="fa fa-bar-chart"></i> <span>Bogor Tengah</span>
+        <li class="treeview <?php if($this->uri->segment(1) == "program") {echo " active";} ?>">
+          <a href="#">
+            <i class="fa fa-bar-chart"></i>
+            <span>Grafik Program</span>
             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-        </li>
-
-        <li class=" <?php if($this->uri->segment(2) == "bogorutara") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'user/bogorutara' ?>"">
-            <i class="fa fa-bar-chart"></i> <span>Bogor Utara</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
-
-        <li class=" <?php if($this->uri->segment(2) == "bogortimur") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'user/bogortimur' ?>"">
-            <i class="fa fa-bar-chart"></i> <span>Bogor Timur</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
-
-        <li class=" <?php if($this->uri->segment(2) == "bogorselatan") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'user/bogorselatan' ?>"">
-            <i class="fa fa-bar-chart"></i> <span>Bogor Selatan</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
-
-        <li class=" <?php if($this->uri->segment(2) == "bogorbarat") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'user/bogorbarat' ?>"">
-            <i class="fa fa-bar-chart"></i> <span>Bogor Barat</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
-
-        <li class=" <?php if($this->uri->segment(2) == "tanahsareal") {echo "active";} ?> " >
-          <a href="<?= base_url(). 'user/tanahsareal' ?>"">
-            <i class="fa fa-bar-chart"></i> <span>Tanah Sareal</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
+          <ul class="treeview-menu">
+            <li class="<?php if($this->uri->segment(1) == "program" && $this->uri->segment(2) == "kotabogor") {echo " active";} ?>" ><a href="<?= base_url(). 'program/kotabogor' ?>"><i class="fa fa-circle-o"></i> Kota Bogor</a></li>
+            <li class="<?php if($this->uri->segment(1) == "program" && $this->uri->segment(2) == "bogortengah") {echo " active";} ?>" ><a href="<?= base_url(). 'program/bogortengah' ?>"><i class="fa fa-circle-o"></i> Kecamatan Bogor Tengah</a></li>
+            <li class="<?php if($this->uri->segment(1) == "program" && $this->uri->segment(2) == "bogorutara") {echo " active";} ?>" ><a href="<?= base_url(). 'program/bogorutara' ?>"><i class="fa fa-circle-o"></i> Kecamatan Bogor Utara</a></li>
+            <li class="<?php if($this->uri->segment(1) == "program" && $this->uri->segment(2) == "bogortimur") {echo " active";} ?>" ><a href="<?= base_url(). 'program/bogortimur' ?>"><i class="fa fa-circle-o"></i> Kecamatan Bogor Timur</a></li>
+            <li class="<?php if($this->uri->segment(1) == "program" && $this->uri->segment(2) == "bogorselatan") {echo " active";} ?>" ><a href="<?= base_url(). 'program/bogorselatan' ?>"><i class="fa fa-circle-o"></i> Kecamatan Bogor Selatan</a></li>
+            <li class="<?php if($this->uri->segment(1) == "program" && $this->uri->segment(2) == "bogorbarat") {echo " active";} ?>" ><a href="<?= base_url(). 'program/bogorbarat' ?>"><i class="fa fa-circle-o"></i> Kecamatan Bogor Barat</a></li>
+            <li class="<?php if($this->uri->segment(1) == "program" && $this->uri->segment(2) == "tanahsareal") {echo " active";} ?>" ><a href="<?= base_url(). 'program/tanahsareal' ?>"><i class="fa fa-circle-o"></i> Kecamatan Tanah Sareal</a></li>
+          </ul>
         </li>
 
       </ul>

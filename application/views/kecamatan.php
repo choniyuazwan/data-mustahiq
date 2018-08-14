@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Grafik
+        Mustahiq
         <small>Kota Bogor</small>
       </h1>
     </section>
@@ -17,7 +17,7 @@
 
             <div class="box-body">
               <div class="col-xs-12">
-                <a href="<?= base_url(). 'upload/kecamatan_print' ?>" target="_blank" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Print</a>
+                <a href="<?= base_url(). 'user/kecamatan_print' ?>" target="_blank" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Print</a>
               </div>      
             </div>
 

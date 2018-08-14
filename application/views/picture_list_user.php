@@ -15,6 +15,12 @@
          
           <div class="box">
             <div class="box-body">
+              <div class="form-group">
+                <!-- <div class="col-xs-offset-5 col-sm-offset-0"> -->
+                <div>
+                  <a href="<?=base_url().'user/form';?>" class="btn btn-success">Tambah Data</a>
+                </div>
+              </div>
 
               <form action="<?= base_url(). 'user/daerah' ?>" method="post" class="form-horizontal">
                 <div class="form-group">
@@ -174,7 +180,7 @@
                   <td>...............</td>
                   <td></td>
                   <td>............................</td>
-					        <td>............................</td>
+					        <td>..............................</td>
                   <td></td>
                   <td>............................</td>
                   <td></td>

@@ -2,8 +2,8 @@
 
 class Pic_model extends CI_Model{
 	
-	//fetch all identitas from db
-	function get_all_pics(){
+	// fetch all identitas from db
+	function get_all_pics() {
 		$all_pics = $this->db->get('identitas');
 		return $all_pics->result();
 	}

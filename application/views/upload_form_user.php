@@ -16,7 +16,7 @@
         <div class="col-md-12">
           <!-- Horizontal Form -->
           <div class="box">
-            <form action="<?=base_url().'upload/file_data';?>" method="post" class="form-horizontal" enctype="multipart/form-data">
+            <form action="<?=base_url().'user/file_data';?>" method="post" class="form-horizontal" enctype="multipart/form-data">
 
               <div class="box-body">
 

@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h2 class="page-header">
-          Grafik Kecamatan Bogor Tengah
+          Mustahiq Kecamatan Bogor Tengah
           <?php date_default_timezone_set("Asia/Jakarta"); ?>
           <small class="pull-right">Tanggal : <?= date("d/m/Y") ?></small>
           <small class="pull-right">Waktu : <?= date("H:i:s") ?> &nbsp;</small>

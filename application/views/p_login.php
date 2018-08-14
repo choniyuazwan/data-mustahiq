@@ -57,10 +57,7 @@
                 ?>
                 <form class="form-horizontal" method="post" action="">
                   <div class="box-body">
-                    <span style="color:red;">Akun admin : khusus petugas</span>
-                    <br>
-                    <span style="color:red;">Akun tamu : username = tamu, password = tamu</span>
-                    <br><br>
+                    
                     <div class="form-group">
                       <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
                       <div class="col-sm-10">

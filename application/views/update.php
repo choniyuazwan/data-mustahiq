@@ -46,31 +46,31 @@
                     <div class="col-sm-9">
                       <div class="checkbox col-sm-6 col-md-4 col-xl-2">
                         <label>
-                          <input type="checkbox" name="jenisprogram[]" value="Bogor Cerdas" <?php if (preg_match('/(Bogor Cerdas)/', $pic->jenisprogram)) {echo " checked ";}  ?> >Bogor Cerdas
+                          <input type="checkbox" name="jenisprogram[]" value="Bogor Sehat" <?php if (preg_match('/(Bogor Sehat)/', $pic->jenisprogram)) {echo " checked ";}  ?> >Bogor Sehat
                         </label>
                       </div>
 
                       <div class="checkbox col-sm-6 col-md-4 col-xl-2">
                         <label>
-                          <input type="checkbox" name="jenisprogram[]" value="Bogor Sehat" <?php if (preg_match('/(Bogor Sehat)/', $pic->jenisprogram)) {echo " checked ";} ?> >Bogor Sehat
+                          <input type="checkbox" name="jenisprogram[]" value="Bogor Cerdas" <?php if (preg_match('/(Bogor Cerdas)/', $pic->jenisprogram)) {echo " checked ";} ?> >Bogor Cerdas
                         </label>
                       </div>
 
                       <div class="checkbox col-sm-6 col-md-4 col-xl-2">
                         <label>
-                          <input type="checkbox" name="jenisprogram[]" value="Bogor Sejahtera" <?php if (preg_match('/(Bogor Sejahtera)/', $pic->jenisprogram)) {echo " checked ";}  ?> >Bogor Sejahtera
+                          <input type="checkbox" name="jenisprogram[]" value="Bogor Peduli" <?php if (preg_match('/(Bogor Peduli)/', $pic->jenisprogram)) {echo " checked ";}  ?> >Bogor Peduli
                         </label>
                       </div>
 
                       <div class="checkbox col-sm-6 col-md-4 col-xl-2">
                         <label>
-                          <input type="checkbox" name="jenisprogram[]" value="Bogor Aman" <?php if (preg_match('/(Bogor Aman)/', $pic->jenisprogram)) {echo " checked ";}  ?> >Bogor Aman
+                          <input type="checkbox" name="jenisprogram[]" value="Bogor Berdakwah" <?php if (preg_match('/(Bogor Berdakwah)/', $pic->jenisprogram)) {echo " checked ";}  ?> >Bogor Berdakwah
                         </label>
                       </div>
 
                       <div class="checkbox col-sm-6 col-md-4 col-xl-2">
                         <label>
-                          <input type="checkbox" name="jenisprogram[]" value="Bogor Bahagia" <?php if (preg_match('/(Bogor Bahagia)/', $pic->jenisprogram)) {echo " checked ";}  ?> >Bogor Bahagia
+                          <input type="checkbox" name="jenisprogram[]" value="Bogor Berkah" <?php if (preg_match('/(Bogor Berkah)/', $pic->jenisprogram)) {echo " checked ";}  ?> >Bogor Berkah
                         </label>
                       </div>
                     </div>
