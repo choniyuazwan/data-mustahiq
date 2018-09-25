@@ -239,15 +239,15 @@ class Upload extends CI_Controller{
 			$this->db->where('kecamatan', 'Bogor-Barat');
 			$data['bogor_barat'] = $this->db->get('identitas')->num_rows();
 
-			$this->db->where('kecamatan', 'Bogor-Sareal');
+			$this->db->where('kecamatan', 'Tanah-Sareal');
 			$data['bogor_sareal'] = $this->db->get('identitas')->num_rows();
 
 			$data['total_kecamatan'] = $data['bogor_tengah'] + $data['bogor_utara'] + $data['bogor_timur'] + $data['bogor_selatan'] + $data['bogor_barat'] + $data['bogor_sareal'];
 
 			if ($data['total_kecamatan'] == 0) {
-				$data['total_bogor_utara'] = 0.0000001;
+				$data['total_kecamatan'] = 0.0000001;
 			}		
-			
+
 			$data['persen_bogor_tengah'] = ($data['bogor_tengah'] * 100) / $data['total_kecamatan'];
 			$data['persen_bogor_tengah'] = round($data['persen_bogor_tengah'], 0);
 
@@ -289,7 +289,7 @@ class Upload extends CI_Controller{
 			$this->db->where('kecamatan', 'Bogor-Barat');
 			$data['bogor_barat'] = $this->db->get('identitas')->num_rows();
 
-			$this->db->where('kecamatan', 'Bogor-Sareal');
+			$this->db->where('kecamatan', 'Tanah-Sareal');
 			$data['bogor_sareal'] = $this->db->get('identitas')->num_rows();
 
 			$data['total_kecamatan'] = $data['bogor_tengah'] + $data['bogor_utara'] + $data['bogor_timur'] + $data['bogor_selatan'] + $data['bogor_barat'] + $data['bogor_sareal'];

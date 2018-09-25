@@ -575,16 +575,16 @@ DONUT CHART
 <script>
   $(function () {
     var donutData = [
-      { label: 'Bogor Tengah', data: <?= $cibadak ?>, color: '#f56954' },
-      { label: 'Bogor Utara', data: <?= $kayumanis ?>, color: '#00a65a' },
-      { label: 'Bogor Timur', data: <?= $kebon_pedes ?>, color: '#f39c12' },
-      { label: 'Bogor Selatan', data: <?= $kedung_badak ?>, color: '#00c0ef' },
-      { label: 'Bogor Barat', data: <?= $kedung_jaya ?>, color: '#3c8dbc' },
-      { label: 'Tanah Sareal', data: <?= $kedug_waringin ?>, color: '#CCFF33' },
-      { label: 'Tanah Sareal', data: <?= $kencana ?>, color: '#0000ff' },
-      { label: 'Tanah Sareal', data: <?= $mekarwangi ?>, color: '#FF0000' },
-      { label: 'Tanah Sareal', data: <?= $sukadamai ?>, color: '#40ff00' },
-      { label: 'Tanah Sareal', data: <?= $sukaresmi ?>, color: '#336600' },
+      { label: 'Cibadak', data: <?= $cibadak ?>, color: '#f56954' },
+      { label: 'Kayumanis', data: <?= $kayumanis ?>, color: '#00a65a' },
+      { label: 'Kebon Pedes', data: <?= $kebon_pedes ?>, color: '#f39c12' },
+      { label: 'Kedung Badak', data: <?= $kedung_badak ?>, color: '#00c0ef' },
+      { label: 'Kedung Jaya', data: <?= $kedung_jaya ?>, color: '#3c8dbc' },
+      { label: 'Kedug Waringin', data: <?= $kedug_waringin ?>, color: '#CCFF33' },
+      { label: 'Kencana', data: <?= $kencana ?>, color: '#0000ff' },
+      { label: 'Mekarwangi', data: <?= $mekarwangi ?>, color: '#FF0000' },
+      { label: 'Sukadamai', data: <?= $sukadamai ?>, color: '#40ff00' },
+      { label: 'Sukaresmi', data: <?= $sukaresmi ?>, color: '#336600' },
       { label: 'Tanah Sareal', data: <?= $tanah_sareal ?>, color: '#8D6E63' }
     ]
     $.plot('#tanahsareal-chart', donutData, {

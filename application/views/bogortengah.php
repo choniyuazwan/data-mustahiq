@@ -17,7 +17,7 @@
 
             <div class="box-body">
               <div class="col-xs-12">
-                <a href="<?= base_url(). 'user/bogortengah_print' ?>" target="_blank" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Print</a>
+                <a href="<?= base_url(). 'upload/bogortengah_print' ?>" target="_blank" class="btn btn-primary pull-right"><i class="fa fa-print"></i> Print</a>
               </div>      
             </div>
 
